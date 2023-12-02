@@ -88,5 +88,9 @@ int BookTree::height(){
 }
 
 bool BookTree::is_red(BookTreeNode* root){
-
+    if (!root){
+        return 0;
+    } else {
+        return root->color;
+    }
 }
