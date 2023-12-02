@@ -23,7 +23,7 @@ class BookTreeNode {
 class BookTree {
     private:
         BookTreeNode* root;
-        BookTreeNode* insert(Book book, BookTreeNode* root);
+        BookTreeNode* insert(Book book, BookTreeNode* root, int serial);
 
         void flipColors(BookTreeNode* root);
         BookTreeNode* rotateLeft(BookTreeNode* root);
@@ -35,7 +35,7 @@ class BookTree {
     public:
         LLRBTree();
 
-        void insert(Book book);
+        void insert(Book book, int serial);
 
         void preorder(std::ostream& os= std::cout);
         void postorder(std::ostream& os= std::cout);
