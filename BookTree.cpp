@@ -4,5 +4,6 @@ BookTreeNode::BookTreeNode(Book book) {
     this->left = nullptr;
     this->right = nullptr;
     color = 1;
-    this->book;
+    this->book = book;
+    this->serial = book.serial;
 }
