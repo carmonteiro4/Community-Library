@@ -16,7 +16,6 @@ class BookTreeNode {
         BookTreeNode* right;
 
     public:
-        BookTreeNode();
         BookTreeNode(Book book);
         friend class BookTree;
 };
