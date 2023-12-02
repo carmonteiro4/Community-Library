@@ -8,7 +8,8 @@
 // all of our data for each book
 
 class Book {
-private:
+public:
+    // Data
     std::string title;
     std::string author;
     std::string NF_F; // Non-Fiction or Fiction
@@ -16,6 +17,33 @@ private:
     std::string type;
     int length;
     int serial;
+
+
+    // Constructor
+    Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length, int serial);
+    ~Book();
+
+    // Getters and Setters
+    void setTitle(std::string title);
+    std::string getTitle();
+
+    void setAuthor(std::string author);
+    std::string getAuthor();
+
+    void setNF_F(std::string NF_F);
+    std::string getNF_F();
+
+    void setGenre(std::string genre);
+    std::string getGenre();
+
+    void setType(std::string type);
+    std::string getType();
+
+    void setLength(std::string length);
+    std::string getLength();
+
+    void setSerial(std::string serial);
+    std::string getSerial();
 };
 
 

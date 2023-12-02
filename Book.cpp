@@ -4,12 +4,13 @@
 #include <string>
 
 // Constructor
-Book::Book(){
-    this->title = "";
-    this->author = "";
-    this->genre = "";
-    this->type = "";
-    this->length = 0;
+Book::Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length, int serial){
+    this->title = title;
+    this->author = author;
+    this->genre = genre;
+    this->type = type;
+    this->length = length;
+    this->serial = serial;
 }
 
 Book::~Book(){
@@ -62,6 +63,14 @@ void Book::setLength(std::string length){
 }
 std::string Book::getLength() {}(){
     return this->length;
+}
+
+// Serial Number Getters/Setters
+void Book::setSerial(std::string serial){
+    this->serial = serial;
+}
+std::string Book::getSerial() {}(){
+return this->serial;
 }
 
 
