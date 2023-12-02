@@ -1,12 +1,11 @@
-//
-// Created by Xlilw on 12/2/2023.
-//
-
 #ifndef CSC_212_PROJECT_BOOK_H
 #define CSC_212_PROJECT_BOOK_H
 
 #include <iostream>
 #include <string>
+
+// This is our book class which will hold
+// all of our data for each book
 
 class Book {
 private:
@@ -17,10 +16,11 @@ private:
     int length;
 
 public:
-    Book();
+    //Constructor
     Book(std::string title, std::string author, std::string genre, std::string type, int length);
     ~Book();
 
+    // Getters and Setters
     void setTitle(std::string title);
     std::string getTitle();
 
