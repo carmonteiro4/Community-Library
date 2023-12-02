@@ -7,8 +7,10 @@
 
 class BookTreeNode {
     private:
+    // node contains book and serial #
         Book book;
         int serial;
+
         bool color;
         BookTreeNode* left;
         BookTreeNode* right;
