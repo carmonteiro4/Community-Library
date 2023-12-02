@@ -8,22 +8,21 @@
 class BookTreeNode {
     private:
     // node contains book and serial #
-        Book book;
-        int serial;
+        Book* book;
 
         bool color;
         BookTreeNode* left;
         BookTreeNode* right;
 
     public:
-        BookTreeNode(Book book);
+        BookTreeNode(Book* book);
         friend class BookTree;
 };
 
 class BookTree {
     private:
         BookTreeNode* root;
-        BookTreeNode* insert(Book book, BookTreeNode* root, int serial);
+        BookTreeNode* insert(Book* book, BookTreeNode* root);
 
         void flipColors(BookTreeNode* root);
         BookTreeNode* rotateLeft(BookTreeNode* root);
@@ -33,9 +32,10 @@ class BookTree {
         bool is_red(BookTreeNode* root);
 
     public:
-        LLRBTree();
+        BookTree();
+        ~BookTree();
 
-        void insert(Book book, int serial);
+        void insert(Book* book, int serial);
 
         void preorder(std::ostream& os= std::cout);
         void postorder(std::ostream& os= std::cout);
