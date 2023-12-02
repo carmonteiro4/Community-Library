@@ -16,30 +16,6 @@ private:
     std::string type;
     int length;
     int serial;
-
-public:
-    //Constructor
-    Book(std::string title, std::string author, std::string genre, std::string type, int length);
-    ~Book();
-
-    // Getters and Setters
-    void setTitle(std::string title);
-    std::string getTitle();
-
-    void setAuthor(std::string author);
-    std::string getAuthor();
-
-    void setNF_F(std::string NF_F);
-    std::string getNF_F();
-
-    void setGenre(std::string genre);
-    std::string getGenre();
-
-    void setType(std::string type);
-    std::string getType();
-
-    void setLength(std::string length);
-    std::string getLength();
 };
 
 
