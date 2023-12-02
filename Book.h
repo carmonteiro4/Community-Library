@@ -11,6 +11,7 @@ class Book {
 private:
     std::string title;
     std::string author;
+    std::string NF_F; // Non-Fiction or Fiction
     std::string genre;
     std::string type;
     int length;
@@ -26,6 +27,9 @@ public:
 
     void setAuthor(std::string author);
     std::string getAuthor();
+
+    void setNF_F(std::string NF_F);
+    std::string getNF_F();
 
     void setGenre(std::string genre);
     std::string getGenre();
