@@ -15,6 +15,7 @@ private:
     std::string genre;
     std::string type;
     int length;
+    int serial;
 
 public:
     //Constructor
