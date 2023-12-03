@@ -21,7 +21,10 @@ Book::~Book(){
 // Serial Number Getters/Setters
 int Book::createSerial() {
     int serial = 0;
+
+    // Serial addition with genre Fiction or Non-Fiction type
     this->NF_F == "Fiction" ? serial+=1000 : serial+=2000;
+
     // Serial addition with genre type
     if (this->genre == "Mystery") {
         serial += 0;
@@ -45,7 +48,7 @@ int Book::createSerial() {
         serial += 900;
     }
 
-    //Serial addition based on type
+    // Serial addition based on type
     if (this->type == "Novel"){
         serial+=0;
     } else if (this->type == "Textbook"){
@@ -57,10 +60,31 @@ int Book::createSerial() {
     } else if (this->type == "Short Story"){
         serial+=40;
     }
-}
 
-std::string Book::getSerial() {}(){
-return this->serial;
+    // Serial addition with length
+    if(this->length < 100){
+        serial = serial;
+    } else if (this->length >= 100 && this->length < 200){
+        serial += 1;
+    } else if (this->length >= 200 && this->length < 300){
+        serial += 2;
+    } else if (this->length >= 300 && this->length < 400){
+        serial += 3;
+    } else if (this->length >= 400 && this->length < 500){
+        serial += 4;
+    } else if (this->length >= 500 && this->length < 600){
+        serial += 5;
+    } else if (this->length >= 600 && this->length < 700){
+        serial += 6;
+    } else if (this->length >= 700 && this->length < 800){
+        serial += 7;
+    } else if (this->length >= 800 && this->length < 900){
+        serial += 8;
+    } else if (this->length >= 900){
+        serial += 9;
+    }
+
+    return serial;
 }
 
 
