@@ -20,7 +20,6 @@ BookTreeNode* BookTree::insert(Book* book, BookTreeNode* root){
         return new BookTreeNode(book);
     }
 
-
     if (book->serial < root->book->serial){
         root->left = insert(book, root->left);
     } else {

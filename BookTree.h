@@ -6,7 +6,7 @@
 #include "Book.h"
 
 class BookTreeNode {
-    private:
+    public:
     // node contains book and serial #
         Book* book;
 
@@ -14,7 +14,6 @@ class BookTreeNode {
         BookTreeNode* left;
         BookTreeNode* right;
 
-    public:
         BookTreeNode(Book* book);
         friend class BookTree;
 };

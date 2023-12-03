@@ -3,8 +3,7 @@
 #include <sstream>
 #include "BookTree.h"
 
-BookTree GetData(std::string infname){
-    BookTree temp;
+BookTree* GetData(std::string infname, BookTree* temp){
 
     std::string line;
     std::string entry;
@@ -46,8 +45,7 @@ BookTree GetData(std::string infname){
         Book *current = new Book (title, author, NF_F, genre, type, length);
         //current->printBook();
 
-        temp.insert(current);
-
+        temp->insert(current);
     }
     File.close();
     return temp;
@@ -61,14 +59,14 @@ void print_tree(BookTree* tree, std::ofstream& os){
 int main(int argc, char*argv[]){
     std::string infname(argv[1]);
     std::string ofname(argv[2]);
-    BookTree tree;
-    tree = GetData(infname);
+    BookTree *tree = new BookTree;
+    tree = GetData(infname, tree);
 
-    std::ofstream of(ofname);
-    print_tree(&tree, of);
-    of << "Tree Height: " << tree.height() << std::endl;
-    of.close();
-    
+//    std::ofstream of(ofname);
+//    print_tree(&tree, of);
+//    of << "Tree Height: " << tree->height() << std::endl;
+//    of.close();
+    delete tree;
     return 0;
 }
 
