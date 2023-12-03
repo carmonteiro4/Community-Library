@@ -74,8 +74,6 @@ int SerialNumberGenerator(std::string NF_F, std::string genre, std::string type,
 }
 
 void GetData(std::string fname){
-    BookTree tree;
-
     std::string line;
     std::string entry;
     std::ifstream File;
@@ -91,7 +89,6 @@ void GetData(std::string fname){
         std::string genre;
         std::string type;
         int length;
-
         int serial;
 
         int i = 0;
@@ -122,6 +119,7 @@ void GetData(std::string fname){
 
 int main(int argc, char*argv[]){
    std::string fname(argv[1]);
+   BookTree *tree = new BookTree();
    GetData(fname);
     
     return 0;

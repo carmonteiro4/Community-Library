@@ -4,7 +4,7 @@
 #include <string>
 
 // Constructor
-Book::Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length, int serial){
+Book::Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length){
     this->title = title;
     this->author = author;
     this->NF_F = NF_F;

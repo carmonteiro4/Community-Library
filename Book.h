@@ -20,7 +20,7 @@ public:
 
 
     // Constructor
-    Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length, int serial);
+    Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length);
     ~Book();
 
     int createSerial();
