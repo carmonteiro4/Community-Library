@@ -111,7 +111,7 @@ void GetData(std::string fname){
 
         serial = SerialNumberGenerator;
         Book *current = new Book (title, author, NF_F, genre, type, length, serial);
-        tree.insert(serial, current);
+        tree.insert(current);
 
     }
     File.close;
