@@ -1,81 +1,80 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include "BookTree.h"
 
 // hello
 
 int SerialNumberGenerator(std::string NF_F, std::string genre, std::string type, int length){
-    int Serial;
+    int serial;
     if(NF_F == "Fiction"){
-        Serial = 1000;
+        serial = 1000;
     }else if(NF_F == "Non-Fiction"){
-        Serial = 2000;
+        serial = 2000;
     }
 
     if(genre == "Mystery"){
-        Serial = Serial;
+        serial = serial;
     }if(genre == "Science"){
-        Serial += 100;
+        serial += 100;
     }if(genre == "Fantasy"){
-        Serial += 200;
+        serial += 200;
     }if(genre == "Romance"){
-        Serial += 300;
+        serial += 300;
     }if(genre == "History"){
-        Serial += 400;
+        serial += 400;
     }if(genre == "Dystopian"){
-        Serial += 500;
+        serial += 500;
     }if(genre == "Comedy"){
-        Serial += 600;
+        serial += 600;
     }if(genre == "Horror"){
-        Serial += 700;
+        serial += 700;
     }if(genre == "Biography"){
-        Serial += 800;
+        serial += 800;
     }if(genre == "Adventure"){
-        Serial += 900;
+        serial += 900;
     }
 
     if(type == "Novel"){
-        Serial = Serial;
+        serial = serial;
     }if(type == "Textbook"){
-        Serial += 10;
+        serial += 10;
     }if(type == "Poetry"){
-        Serial += 20;
+        serial += 20;
     }if(type == "Essay"){
-        Serial += 30;
+        serial += 30;
     }if(type == "Short Essay"){
-        Serial += 40;
+        serial += 40;
     }
 
     if(length < 100){
-        Serial = Serial;
+        serial = serial;
     }if(length >= 100 && length < 200){
-        Serial += 1;
+        serial += 1;
     }if(length >= 200 && length < 300){
-        Serial += 2;
+        serial += 2;
     }if(length >= 300 && length < 400){
-        Serial += 3;
+        serial += 3;
     }if(length >= 400 && length < 500){
-        Serial += 4;
+        serial += 4;
     }if(length >= 500 && length < 600){
-        Serial += 5;
+        serial += 5;
     }if(length >= 600 && length < 700){
-        Serial += 6;
+        serial += 6;
     }if(length >= 700 && length < 800){
-        Serial += 7;
+        serial += 7;
     }if(length >= 800 && length < 900){
-        Serial += 8;
+        serial += 8;
     }if(length >= 900){
-        Serial += 9;
+        serial += 9;
     }
 
-    return Serial;
+    return serial;
 
 }
 
-
-int main(int argc, char*argv[]){
-   std::string fname(argv[1]);
-   BookTree tree;
+void GetData(std::string fname){
+    BookTree tree;
 
     std::string line;
     std::string entry;
@@ -83,40 +82,47 @@ int main(int argc, char*argv[]){
 
     std::getline(File, line);
     while(std::getline(File, line)){
-      
-      std::stringstream streamline(line);
 
-      std::string title;
-      std::string author;
-      std::string NF_F;
-      std::string genre;
-      std::string type;
-      int length;
+        std::stringstream streamline(line);
 
-      int Serial;
+        std::string title;
+        std::string author;
+        std::string NF_F;
+        std::string genre;
+        std::string type;
+        int length;
 
-      int i = 0;
-      while(std::getline(streamline, entry, ',')){
-          if(i == 0){
-              title = entry;
-          }else if(i == 1){
-              author = entry;
-          }else if(i == 2){
-              NF_F = entry;
-          }else if(i == 3){
-              genre = entry;
-          }else if(i == 4){
-              type = entry;
-          }else if(i == 5){
-              length = std::stoi(entry);
+        int serial;
 
-          }
-          i++;
-      }
-      Serial = SerialNumberGenerator;
-      tree.insert(Serial, book);
+        int i = 0;
+        while(std::getline(streamline, entry, ',')){
+            if(i == 0){
+                title = entry;
+            }else if(i == 1){
+                author = entry;
+            }else if(i == 2){
+                NF_F = entry;
+            }else if(i == 3){
+                genre = entry;
+            }else if(i == 4){
+                type = entry;
+            }else if(i == 5){
+                length = std::stoi(entry);
+            }
+            i++;
+        }
+
+        serial = SerialNumberGenerator;
+        Book *current = new Book (title, author, NF_F, genre, type, length, serial);
+        tree.insert(serial, current);
+
     }
     File.close;
+}
+
+int main(int argc, char*argv[]){
+   std::string fname(argv[1]);
+   GetData(fname);
     
-return 0;
+    return 0;
 }
