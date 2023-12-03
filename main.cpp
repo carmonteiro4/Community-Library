@@ -3,12 +3,12 @@
 #include <sstream>
 #include "BookTree.h"
 
-BookTree GetData(std::string fname){
+BookTree GetData(std::string infname){
     BookTree temp;
 
     std::string line;
     std::string entry;
-    std::ofstream File(fname);
+    std::ifstream File(infname);
 
     if (!File) {
         std::cerr << "Error opening file" << std::endl;
@@ -57,14 +57,15 @@ void print_tree(BookTree* tree, std::ofstream& os){
 }
 
 int main(int argc, char*argv[]){
-    std::string fname(argv[1]);
+    std::string infname(argv[1]);
+    std::string ofname(argv[2]);
     BookTree tree;
-    tree = GetData(fname);
+    tree = GetData(infname);
 
-//   std::ofstream fs(fname);
-//   print_tree(&tree, fs);
-//   fs << "Tree Height: " << tree.height() << std::endl;
-//   fs.close();
+    std::ofstream of(ofname);
+    print_tree(&tree, of);
+    of << "Tree Height: " << tree.height() << std::endl;
+    of.close();
     
     return 0;
 }
