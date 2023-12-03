@@ -1,6 +1,6 @@
 #include "BookTree.h"
 
-BookTreeNode::BookTreeNode(Book book) {
+BookTreeNode::BookTreeNode(Book* book) {
     this->left = nullptr;
     this->right = nullptr;
     color = 1;
@@ -15,29 +15,27 @@ BookTree::~BookTree(){
     delete this->root;
 }
 
-BookTreeNode* BookTree::insert(Book book, BookTreeNode* root){
-    if(!root){
-        return new LLRBNode(book);
+BookTreeNode* BookTree::insert(Book* book, BookTreeNode* root){
+    if (!root){
+        return new BookTreeNode(book);
     }
 
 
-    if(book->serial < root->book->serial){
+    if (book->serial < root->book->serial){
         root->left = insert(book, root->left);
-        // Go right otherwise
-    }else{
+    } else {
         root->right = insert(book, root->right);
     }
 
-    // LLRBTree addition
-    if (isRed(root->right) && !isRed(root->left)){
+    if (is_red(root->right) && !is_red(root->left)){
         root = rotateLeft(root);
     }
 
-    if (isRed(root->left) && isRed(root->left->left)){
+    if (is_red(root->left) && is_red(root->left->left)){
         root = rotateRight(root);
     }
 
-    if (isRed(root->left) && isRed(root->right)){
+    if (is_red(root->left) && is_red(root->right)){
         flipColors(root);
     }
 

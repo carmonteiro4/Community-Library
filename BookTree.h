@@ -20,7 +20,7 @@ class BookTreeNode {
 };
 
 class BookTree {
-    private:
+    public:
         BookTreeNode* root;
         BookTreeNode* insert(Book* book, BookTreeNode* root);
 
@@ -31,7 +31,7 @@ class BookTree {
         int height(BookTreeNode* root);
         bool is_red(BookTreeNode* root);
 
-    public:
+
         BookTree();
         ~BookTree();
 
