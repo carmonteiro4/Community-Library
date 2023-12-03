@@ -71,12 +71,12 @@ BookTreeNode* BookTree::rotateRight(BookTreeNode* root){
     return temp;
 }
 
-int height(BookTreeNode* root){
-    if(!root){
+int BookTree::height(BookTreeNode* node){
+    if(!node){
         return -1;
     }
-    int left = height(root->left);
-    int right = height(root->right);
+    int left = height(node->left);
+    int right = height(node->right);
 
     return (left > right ? left + 1 : right + 1);
 }
