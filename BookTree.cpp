@@ -20,7 +20,7 @@ BookTreeNode* BookTree::insert(Book book, BookTreeNode* root){
         return new LLRBNode(book);
     }
 
-    // Go left if data < data at this Node
+
     if(book->serial < root->book->serial){
         root->left = insert(book, root->left);
         // Go right otherwise
@@ -44,4 +44,49 @@ BookTreeNode* BookTree::insert(Book book, BookTreeNode* root){
     return root;
 }
 
+void BookTree::insert(Book* book){
+    this->root = insert(book, root);
+    this->root->color = 0;
+}
 
+void BookTree::flipColors(BookTreeNode* root){
+    root->color = !root->color;
+    root->left->color = !root->left->color;
+    root->right->color = !root->right->color;
+}
+
+BookTreeNode* BookTree::rotateLeft(BookTreeNode* root){
+    BookTreeNode* temp = root->right;
+    root->right = temp->left;
+    temp->left = root;
+    temp->color = root->color;
+    root->color = 1;
+    return temp;
+}
+
+BookTreeNode* BookTree::rotateRight(BookTreeNode* root){
+    BookTreeNode* temp = root->left;
+    root->left = temp->right;
+    temp->right = root;
+    temp->color = root->color;
+    root->color = 1;
+    return temp;
+}
+
+int height(BookTreeNode* root){
+    if(!root){
+        return -1;
+    }
+    int left = height(root->left);
+    int right = height(root->right);
+
+    return (left > right ? left + 1 : right + 1);
+}
+
+int BookTree::height(){
+    return height(root);
+}
+
+bool BookTree::is_red(BookTreeNode* root){
+
+}

@@ -35,7 +35,7 @@ class BookTree {
         BookTree();
         ~BookTree();
 
-        void insert(Book* book, int serial);
+        void insert(Book* book);
 
         void preorder(std::ostream& os= std::cout);
         void postorder(std::ostream& os= std::cout);
