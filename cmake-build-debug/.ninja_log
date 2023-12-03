@@ -1,6 +1,7 @@
 # ninja log v5
-1	517	7233428685952187	CMakeFiles/CSC-212-Project.dir/BookTree.cpp.obj	933e16ac783a2cff
-29	530	7233428686082176	CMakeFiles/CSC-212-Project.dir/Book.cpp.obj	ec4266e4f6111f66
-14	609	7233428686882179	CMakeFiles/CSC-212-Project.dir/main.cpp.obj	eefc5a7c080e4ad7
 610	778	7233428688532161	CSC-212-Project.exe	9f0414f85c0bff2d
-4	482	7233429808199675	CMakeFiles/CSC-212-Project.dir/BookTree.cpp.obj	933e16ac783a2cff
+2	223	7233450008965384	build.ninja	9edbe6b463c21f7e
+1	507	7233450014425432	CMakeFiles/CSC-212-Project.dir/BookTree.cpp.obj	933e16ac783a2cff
+10	510	7233450014425432	CMakeFiles/CSC-212-Project.dir/Book.cpp.obj	ec4266e4f6111f66
+24	581	7233450015165413	CMakeFiles/CSC-212-Project.dir/main.cpp.obj	eefc5a7c080e4ad7
+582	752	7233450016835389	CSC-212-Project.exe	9f0414f85c0bff2d
