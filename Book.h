@@ -20,7 +20,7 @@ public:
 
 
     // Constructor
-    Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length, int serial);
+    Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length);
     ~Book();
 
     // Getters and Setters
@@ -42,8 +42,9 @@ public:
     void setLength(std::string length);
     std::string getLength();
 
-    void setSerial(std::string serial);
     std::string getSerial();
+
+    int createSerial();
 };
 
 
