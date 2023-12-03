@@ -21,7 +21,6 @@ BookTree GetData(std::string fname){
         std::string genre;
         std::string type;
         int length;
-        int serial;
 
         int i = 0;
         while(std::getline(streamline, entry, ',')){
@@ -58,10 +57,10 @@ int main(int argc, char*argv[]){
    std::string fname(argv[1]);
    BookTree tree;
    tree = GetData(fname);
-    std::ofstream fs(fname);
-    print_tree(&tree, fs);
-    fs << "Tree Height: " << tree.height() << std::endl;
-    fs.close();
+   std::ofstream fs(fname);
+   print_tree(&tree, fs);
+   fs << "Tree Height: " << tree.height() << std::endl;
+   fs.close();
     
     return 0;
 }
