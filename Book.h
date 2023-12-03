@@ -20,29 +20,8 @@ public:
 
 
     // Constructor
-    Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length);
+    Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length, int serial);
     ~Book();
-
-    // Getters and Setters
-    void setTitle(std::string title);
-    std::string getTitle();
-
-    void setAuthor(std::string author);
-    std::string getAuthor();
-
-    void setNF_F(std::string NF_F);
-    std::string getNF_F();
-
-    void setGenre(std::string genre);
-    std::string getGenre();
-
-    void setType(std::string type);
-    std::string getType();
-
-    void setLength(std::string length);
-    std::string getLength();
-
-    std::string getSerial();
 
     int createSerial();
 };
