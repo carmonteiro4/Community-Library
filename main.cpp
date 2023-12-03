@@ -45,6 +45,7 @@ BookTree GetData(std::string infname){
 
         Book *current = new Book (title, author, NF_F, genre, type, length);
         //current->printBook();
+
         temp.insert(current);
 
     }
