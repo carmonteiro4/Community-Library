@@ -13,10 +13,10 @@ BookTree GetData(std::string infname){
     if (!File) {
         std::cerr << "Error opening file" << std::endl;
     }
-    std::getline(File, line);
+    // std::getline(File, line);
+    // COMMENTED OUT FOR TESTING
 
     while(std::getline(File, line)){
-
         std::stringstream streamline(line);
         std::string title;
         std::string author;
@@ -44,6 +44,7 @@ BookTree GetData(std::string infname){
         }
 
         Book *current = new Book (title, author, NF_F, genre, type, length);
+        //current->printBook();
         temp.insert(current);
 
     }

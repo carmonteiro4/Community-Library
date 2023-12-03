@@ -24,6 +24,7 @@ public:
     ~Book();
 
     int createSerial();
+    void printBook();
 };
 
 
