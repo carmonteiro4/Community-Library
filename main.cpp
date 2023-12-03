@@ -49,14 +49,20 @@ BookTree GetData(std::string fname){
     return temp;
 }
 
+void print_tree(BookTree* tree, std::ofstream& os){
+    tree->preorder(os);
+
+}
+
 int main(int argc, char*argv[]){
    std::string fname(argv[1]);
    BookTree tree;
    tree = GetData(fname);
     std::ofstream fs(fname);
-    tree.preorder(fs);
+    print_tree(&tree, fs);
     fs << "Tree Height: " << tree.height() << std::endl;
     fs.close();
     
     return 0;
 }
+
