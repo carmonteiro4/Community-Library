@@ -8,20 +8,22 @@ BookTree GetData(std::string fname){
 
     std::string line;
     std::string entry;
-    std::ifstream File;
+    std::ofstream File(fname);
 
+    if (!File) {
+        std::cerr << "Error opening file" << std::endl;
+    }
     std::getline(File, line);
+
     while(std::getline(File, line)){
 
         std::stringstream streamline(line);
-
         std::string title;
         std::string author;
         std::string NF_F;
         std::string genre;
         std::string type;
         int length;
-        int serial;
 
         int i = 0;
         while(std::getline(streamline, entry, ',')){
@@ -49,12 +51,21 @@ BookTree GetData(std::string fname){
     return temp;
 }
 
+void print_tree(BookTree* tree, std::ofstream& os){
+    tree->preorder(os);
+
+}
+
 int main(int argc, char*argv[]){
-   std::string fname(argv[1]);
-   BookTree tree;
-   tree = GetData(fname);
-    std::ofstream fs(fname);
-    tree.preorder(fs);
+    std::string fname(argv[1]);
+    BookTree tree;
+    tree = GetData(fname);
+
+//   std::ofstream fs(fname);
+//   print_tree(&tree, fs);
+//   fs << "Tree Height: " << tree.height() << std::endl;
+//   fs.close();
     
     return 0;
 }
+

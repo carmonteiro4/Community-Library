@@ -71,19 +71,6 @@ BookTreeNode* BookTree::rotateRight(BookTreeNode* root){
     return temp;
 }
 
-int BookTree::height(BookTreeNode* node){
-    if(!node){
-        return -1;
-    }
-    int left = height(node->left);
-    int right = height(node->right);
-
-    return (left > right ? left + 1 : right + 1);
-}
-
-int BookTree::height(){
-    return height(root);
-}
 
 bool BookTree::is_red(BookTreeNode* root){
     if (!root){
@@ -109,4 +96,18 @@ void BookTree::preorder(BookTreeNode* root, std::ostream& os){
 void BookTree::preorder(std::ostream& os){
     this->preorder(this->root, os);
     os << "\n";
+}
+
+int BookTree::height(BookTreeNode* root){
+    if(!root){
+        return -1;
+    }
+    int left = height(root->left);
+    int right = height(root->right);
+
+    return (left > right ? left + 1 : right + 1);
+}
+
+int BookTree::height(){
+    return this->height(this->root);
 }

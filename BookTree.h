@@ -28,7 +28,6 @@ class BookTree {
         BookTreeNode* rotateLeft(BookTreeNode* root);
         BookTreeNode* rotateRight(BookTreeNode* root);
 
-        int height(BookTreeNode* root);
         bool is_red(BookTreeNode* root);
 
 
@@ -45,6 +44,7 @@ class BookTree {
 
     private:
         void preorder(BookTreeNode* root, std::ostream& os);
+        int height(BookTreeNode* root);
 
 };
 

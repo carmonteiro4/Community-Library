@@ -1,4 +1,2 @@
-Light The Lost,Emma Davis,Non-Fiction,Adventure,Essay,360
-Eternal Destiny Chronicle,Sophia Brown,Non-Fiction,Biography,Textbook,68
-Hope Lost Light,Emma Garcia,Fiction,Dystopian,Novel,239
-Eternal Against Within,James Jones,Non-Fiction,History,Poetry,62
+
+Tree Height: -1
