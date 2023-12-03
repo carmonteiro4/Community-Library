@@ -92,3 +92,21 @@ bool BookTree::is_red(BookTreeNode* root){
         return root->color;
     }
 }
+
+void BookTree::preorder(BookTreeNode* root, std::ostream& os){
+    if(!root){
+        return;
+    }
+
+    os << root->book->serial << ":" << root->color << " ";
+    this->preorder(root->left, os);
+    this->preorder(root->right, os);
+
+    return;
+}
+
+
+void BookTree::preorder(std::ostream& os){
+    this->preorder(this->root, os);
+    os << "\n";
+}

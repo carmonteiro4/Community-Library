@@ -42,6 +42,10 @@ class BookTree {
         void inorder(std::ostream& os = std::cout);
         void search(int serialNum);
         int height();
+
+    private:
+        void preorder(BookTreeNode* root, std::ostream& os);
+
 };
 
 #endif //CSC_212_PROJECT_BOOKTREE_H
