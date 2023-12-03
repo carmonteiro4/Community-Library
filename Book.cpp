@@ -7,6 +7,7 @@
 Book::Book(std::string title, std::string author, std::string NF_F, std::string genre, std::string type, int length, int serial){
     this->title = title;
     this->author = author;
+    this->NF_F = NF_F;
     this->genre = genre;
     this->type = type;
     this->length = length;
