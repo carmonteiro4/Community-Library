@@ -55,6 +55,8 @@ int main(int argc, char*argv[]){
    tree = GetData(fname);
     std::ofstream fs(fname);
     tree.preorder(fs);
+    fs << "Tree Height: " << tree.height() << std::endl;
+    fs.close();
     
     return 0;
 }
