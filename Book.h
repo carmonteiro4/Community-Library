@@ -24,7 +24,9 @@ public:
     ~Book();
 
     int createSerial();
+    void printBook();
 };
+
 
 
 #endif //CSC_212_PROJECT_BOOK_H
