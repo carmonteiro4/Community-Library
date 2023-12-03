@@ -73,7 +73,9 @@ int SerialNumberGenerator(std::string NF_F, std::string genre, std::string type,
 
 }
 
-void GetData(std::string fname){
+BookTree GetData(std::string fname){
+    BookTree temp;
+
     std::string line;
     std::string entry;
     std::ifstream File;
@@ -109,18 +111,18 @@ void GetData(std::string fname){
             i++;
         }
 
-        serial = SerialNumberGenerator;
-        Book *current = new Book (title, author, NF_F, genre, type, length, serial);
-        tree.insert(current);
+        Book *current = new Book (title, author, NF_F, genre, type, length);
+        temp.insert(current);
 
     }
-    File.close;
+    File.close();
+    return temp;
 }
 
 int main(int argc, char*argv[]){
    std::string fname(argv[1]);
-   BookTree *tree = new BookTree();
-   GetData(fname);
+   BookTree tree;
+   tree = GetData(fname);
     
     return 0;
 }
