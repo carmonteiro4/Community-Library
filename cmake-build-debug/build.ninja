@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Project
+# Project: CSC-212-Project
 # Configurations: Debug
 # =============================================================================
 
@@ -40,6 +40,58 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = C$:/Users/james/OneDrive$ -$ University$ of$ Rhode$ Island/Documents/GitHub/CSC-212-Project/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target CSC-212-Project
+
+
+#############################################
+# Order-only phony target for CSC-212-Project
+
+build cmake_object_order_depends_target_CSC-212-Project: phony || CMakeFiles/CSC-212-Project.dir
+
+build CMakeFiles/CSC-212-Project.dir/main.cpp.obj: CXX_COMPILER__CSC-212-Project_unscanned_Debug C$:/Users/james/OneDrive$ -$ University$ of$ Rhode$ Island/Documents/GitHub/CSC-212-Project/main.cpp || cmake_object_order_depends_target_CSC-212-Project
+  DEP_FILE = CMakeFiles\CSC-212-Project.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CSC-212-Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\CSC-212-Project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CSC-212-Project.dir\
+  TARGET_PDB = CSC-212-Project.pdb
+
+build CMakeFiles/CSC-212-Project.dir/BookTree.cpp.obj: CXX_COMPILER__CSC-212-Project_unscanned_Debug C$:/Users/james/OneDrive$ -$ University$ of$ Rhode$ Island/Documents/GitHub/CSC-212-Project/BookTree.cpp || cmake_object_order_depends_target_CSC-212-Project
+  DEP_FILE = CMakeFiles\CSC-212-Project.dir\BookTree.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CSC-212-Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\CSC-212-Project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CSC-212-Project.dir\
+  TARGET_PDB = CSC-212-Project.pdb
+
+build CMakeFiles/CSC-212-Project.dir/Book.cpp.obj: CXX_COMPILER__CSC-212-Project_unscanned_Debug C$:/Users/james/OneDrive$ -$ University$ of$ Rhode$ Island/Documents/GitHub/CSC-212-Project/Book.cpp || cmake_object_order_depends_target_CSC-212-Project
+  DEP_FILE = CMakeFiles\CSC-212-Project.dir\Book.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CSC-212-Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\CSC-212-Project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CSC-212-Project.dir\
+  TARGET_PDB = CSC-212-Project.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target CSC-212-Project
+
+
+#############################################
+# Link the executable CSC-212-Project.exe
+
+build CSC-212-Project.exe: CXX_EXECUTABLE_LINKER__CSC-212-Project_Debug CMakeFiles/CSC-212-Project.dir/main.cpp.obj CMakeFiles/CSC-212-Project.dir/BookTree.cpp.obj CMakeFiles/CSC-212-Project.dir/Book.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\CSC-212-Project.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\CSC-212-Project.dir\
+  TARGET_FILE = CSC-212-Project.exe
+  TARGET_IMPLIB = libCSC-212-Project.dll.a
+  TARGET_PDB = CSC-212-Project.pdb
+
 
 #############################################
 # Utility command for edit_cache
@@ -66,6 +118,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build CSC-212-Project: phony CSC-212-Project.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -74,12 +128,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: C:/Users/james/OneDrive - University of Rhode Island/Documents/GitHub/CSC-212-Project/cmake-build-debug
 
-build all: phony
-
-# =============================================================================
-# Unknown Build Time Dependencies.
-# Tell Ninja that they may appear as side effects of build rules
-# otherwise ordered by order-only dependencies.
+build all: phony CSC-212-Project.exe
 
 # =============================================================================
 # Built-in targets
