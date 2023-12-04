@@ -137,7 +137,7 @@ int BookTree::closestSerial(int serial) {
     return closestSerial(this->root, serial, closest);
 }
 
-bool BookTree::search(int closestSerial, BookTreeNode* root, BookTreeNode* node){
+bool BookTree::search(int closestSerial, BookTreeNode* root, BookTreeNode* &node){
     if(!root){
         return false;
     }
@@ -154,29 +154,36 @@ bool BookTree::search(int closestSerial, BookTreeNode* root, BookTreeNode* node)
     }
 }
 
-void BookTree::getSuggestions(int closestSerial, std::vector<Book> *suggestions){
-    BookTreeNode* node = nullptr;
+void BookTree::getSuggestions(int closestSerial, std::vector<Book>* suggestions) {
+    BookTreeNode *node = nullptr;
     search(closestSerial, this->root, node);
+
     if (node->book != nullptr) {
         suggestions->emplace_back(node->book);
-    }
-    if (node->book != nullptr && node->left != nullptr){
-        suggestions->emplace_back(node->left->book);
-    }
-    if (node->book != nullptr && node->right != nullptr){
-        suggestions->emplace_back(node->right->book);
-    }
-    if (node->book != nullptr && node->left != nullptr && node->left->left != nullptr){
-        suggestions->emplace_back(node->left->left->book);
-    }
-    if (node->book != nullptr && node->right != nullptr && node->right->left != nullptr) {
-        suggestions->emplace_back(node->right->left->book);
-    }
-    if (node->book != nullptr && node->left != nullptr && node->left->right != nullptr){
-        suggestions->emplace_back(node->left->right->book);
-    }
-    if (node->book != nullptr && node->right != nullptr && node->right->right != nullptr) {
-        suggestions->emplace_back(node->right->right->book);
+
+        if (node->left != nullptr) {
+            suggestions->emplace_back(node->left->book);
+
+            if (node->left->left != nullptr) {
+                suggestions->emplace_back(node->left->left->book);
+            }
+
+            if (node->book != nullptr && node->left != nullptr && node->left->right != nullptr) {
+                suggestions->emplace_back(node->left->right->book);
+            }
+        }
+
+        if (node->right != nullptr) {
+            suggestions->emplace_back(node->right->book);
+
+            if (node->book != nullptr && node->right != nullptr && node->right->left != nullptr) {
+                suggestions->emplace_back(node->right->left->book);
+            }
+
+            if (node->book != nullptr && node->right != nullptr && node->right->right != nullptr) {
+                suggestions->emplace_back(node->right->right->book);
+            }
+        }
     }
 }
 
