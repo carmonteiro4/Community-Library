@@ -67,7 +67,7 @@ int getInfo(){
     std::cout << "2: Non-Fiction" << std::endl;
 
     std::cin >> num;
-    num == 0 ? serial+=1000 : serial+=2000;
+    num == 1 ? serial+=1000 : serial+=2000;
 
     // Genre Collection
     std::cout << "Enter Number for Genre: " << std::endl;
@@ -170,7 +170,7 @@ int main(int argc, char*argv[]){
     tree->getSuggestions(closestSerial, &suggestions);
 
     for (int i = 0; i < suggestions.size(); i++){
-        std::cout << suggestions[i].title << suggestions[i].author << ", " << suggestions[i].NF_F << ", " << suggestions[i].genre << ", " << suggestions[i].type << ", " << suggestions[i].length << std::endl;
+        std::cout << suggestions[i].title << ", " << suggestions[i].author << ", " << suggestions[i].NF_F << ", " << suggestions[i].genre << ", " << suggestions[i].type << ", " << suggestions[i].length << std::endl;
     }
 
 
