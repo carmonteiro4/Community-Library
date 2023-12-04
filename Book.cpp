@@ -91,4 +91,14 @@ void Book::printBook(){
     std::cout << title << ',' << author << ", " << NF_F << ", " << genre << ", "<< type << ", " << length << ", " << serial << std::endl;
 }
 
+Book::Book(Book *pBook) {
+    this->title = pBook->title;
+    this->author = pBook->author;
+    this->NF_F = pBook->NF_F;
+    this->genre = pBook->genre;
+    this->type = pBook->type;
+    this->length = pBook->length;
+    this->serial = pBook->createSerial();
+}
+
 

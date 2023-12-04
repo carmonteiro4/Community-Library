@@ -137,4 +137,47 @@ int BookTree::closestSerial(int serial) {
     return closestSerial(this->root, serial, closest);
 }
 
+bool BookTree::search(int closestSerial, BookTreeNode* root, BookTreeNode* node){
+    if(!root){
+        return false;
+    }
+
+    if(closestSerial == root->book->serial){
+        node = root;
+        return true;
+    }
+
+    if(closestSerial < root->book->serial){
+        return this->search(closestSerial, root->left, node);
+    }else{
+        return this->search(closestSerial, root->right, node);
+    }
+}
+
+void BookTree::getSuggestions(int closestSerial, std::vector<Book> *suggestions){
+    BookTreeNode* node = nullptr;
+    search(closestSerial, this->root, node);
+    if (node->book != nullptr) {
+        suggestions->emplace_back(node->book);
+    }
+    if (node->book != nullptr && node->left != nullptr){
+        suggestions->emplace_back(node->left->book);
+    }
+    if (node->book != nullptr && node->right != nullptr){
+        suggestions->emplace_back(node->right->book);
+    }
+    if (node->book != nullptr && node->left != nullptr && node->left->left != nullptr){
+        suggestions->emplace_back(node->left->left->book);
+    }
+    if (node->book != nullptr && node->right != nullptr && node->right->left != nullptr) {
+        suggestions->emplace_back(node->right->left->book);
+    }
+    if (node->book != nullptr && node->left != nullptr && node->left->right != nullptr){
+        suggestions->emplace_back(node->left->right->book);
+    }
+    if (node->book != nullptr && node->right != nullptr && node->right->right != nullptr) {
+        suggestions->emplace_back(node->right->right->book);
+    }
+}
+
 

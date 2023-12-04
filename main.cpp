@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <vector>
 #include "BookTree.h"
 
 BookTree* GetData(std::string infname, BookTree* temp){
@@ -164,6 +165,14 @@ int main(int argc, char*argv[]){
 
     int closestSerial = tree->closestSerial(serial);
     std::cout << "Closest serial to " << serial << " is " << closestSerial << std::endl;
+
+    std::vector<Book> suggestions;
+    tree->getSuggestions(closestSerial, &suggestions);
+
+    for (int i = 0; i < suggestions.size(); i++){
+        std::cout << suggestions[i].title << suggestions[i].author << suggestions[i].NF_F << suggestions[i].genre << suggestions[i].type << suggestions[i].length << std::endl;
+    }
+
 
 
 //    std::ofstream of(ofname);

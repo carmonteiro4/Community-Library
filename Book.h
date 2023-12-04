@@ -9,7 +9,9 @@
 
 class Book {
 public:
-    // Data
+    Book(Book *pBook);
+
+// Data
     std::string title;
     std::string author;
     std::string NF_F; // Non-Fiction or Fiction
