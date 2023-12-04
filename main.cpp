@@ -5,21 +5,22 @@
 #include <cmath>
 #include "BookTree.h"
 
+
+// This Function reads the data from a file and populate the BookTree
 BookTree* GetData(std::string infname, BookTree* temp){
 
     std::string line;
     std::string entry;
-    std::ifstream File(infname);
+    std::ifstream File(infname);// Opens file stream for reading
 
     if (!File) {
-        std::cerr << "Error opening file" << std::endl;
+        std::cerr << "Error opening file" << std::endl;// Prints an error if file opening fails
     }
     // std::getline(File, line);
     // COMMENTED OUT FOR TESTING
 
-    while(std::getline(File, line)){
-        std::stringstream streamline(line);
-        std::string title;
+    while(std::getline(File, line)){// Reads each line from the file
+        std::stringstream streamline(line);// Processes the line as a stream
         std::string author;
         std::string NF_F;
         std::string genre;
@@ -27,7 +28,7 @@ BookTree* GetData(std::string infname, BookTree* temp){
         int length;
 
         int i = 0;
-        while(std::getline(streamline, entry, ',')){
+        while(std::getline(streamline, entry, ',')){// Parses the data separated by commas
             if(i == 0){
                 title = entry;
             }else if(i == 1){
@@ -39,24 +40,25 @@ BookTree* GetData(std::string infname, BookTree* temp){
             }else if(i == 4){
                 type = entry;
             }else if(i == 5){
-                length = std::stoi(entry);
+                length = std::stoi(entry);// Converts string to int for length
             }
             i++;
         }
 
-        Book *current = new Book (title, author, NF_F, genre, type, length);
+        Book *current = new Book (title, author, NF_F, genre, type, length);// Creates a new Book object
         //current->printBook();
 
-        temp->insert(current);
+        temp->insert(current);// Inserts the Book object into the BookTree
     }
-    File.close();
-    return temp;
+    File.close();// Closes the file stream
+    return temp;// Returns the updated BookTree
 }
 
+// Function to print the BookTree in preorder
 void print_tree(BookTree* tree, std::ofstream& os){
     tree->preorder(os);
 }
-
+// Function to get user input for book attributes and creates a serial number
 int getInfo(int *currentNF_F, int *currentGenre){
     int num;
     int serial = 0;
@@ -157,6 +159,51 @@ int getInfo(int *currentNF_F, int *currentGenre){
 
     return serial;
 }
+// Function to get user input for book attributes and creates a serial number
+void promptUser(int argc, char*argv[]){
+    std::string infname(argv[1]);
+    std::string ofname(argv[2]);
+    BookTree *tree = new BookTree;
+    tree = GetData(infname, tree);
+    int input = -1;
+    while(input != 0){
+        std::cout << ("0: Exit Code");
+        std::cout << ("1: Get Book Recommendation");
+        std::cout << ("2: Insert Book to the Database");
+        std::cin >> input;
+        if(input = 0){
+        break;
+    }
+        if(input = 1){
+            int serial = getInfo();
+
+        int closestSerial = tree->closestSerial(serial);
+        //    std::cout << "Closest serial to " << serial << " is " << closestSerial << std::endl;
+
+        std::vector<Book> suggestions;
+        tree->getSuggestions(closestSerial, &suggestions);
+
+        for (int i = 0; i < suggestions.size(); i++){
+            std::cout << suggestions[i].title << ", " << suggestions[i].author << ", " << suggestions[i].NF_F << ", " << suggestions[i].genre << ", " << suggestions[i].type << ", " << suggestions[i].length << std::endl;
+    }
+        }
+        if(input = 2){
+            int serial = getInfo();
+            //tree->insert()
+
+        }
+
+    }
+    
+
+    
+
+=======
+// Function to extract a digit from a number at a specified position
+int getDigit(int number, int position) {
+    return abs(number) / static_cast<int>(std::pow(10, position)) % 10;
+>>>>>>> 87d3867d7c5b1dd0be00dfc9690f8106ee79ba48
+}
 
 int main(int argc, char*argv[]){
     std::string infname(argv[1]);
@@ -183,7 +230,7 @@ int main(int argc, char*argv[]){
     }
 
 
-    delete tree;
-    return 0;
+    delete tree;// Deallocates memory for the BookTree
+    return 0;// Returns from main function
 }
 
