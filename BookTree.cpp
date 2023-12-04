@@ -1,3 +1,4 @@
+#include <vector>
 #include "BookTree.h"
 
 BookTreeNode::BookTreeNode(Book* book) {
@@ -110,3 +111,4 @@ int BookTree::height(BookTreeNode* root){
 int BookTree::height(){
     return this->height(this->root);
 }
+

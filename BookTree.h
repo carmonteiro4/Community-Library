@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <ostream>
+#include <vector>
 #include "Book.h"
 
 class BookTreeNode {
@@ -40,6 +41,7 @@ class BookTree {
         void inorder(std::ostream& os = std::cout);
         void search(int serialNum);
         int height();
+
 
     private:
         void preorder(BookTreeNode* root, std::ostream& os);
