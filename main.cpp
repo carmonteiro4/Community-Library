@@ -6,7 +6,7 @@
 #include "BookTree.h"
 
 BookTree* GetData(std::string infname, BookTree* temp){
-
+    // creating variables for the stream
     std::string line;
     std::string entry;
     std::ifstream File(infname);
@@ -16,6 +16,7 @@ BookTree* GetData(std::string infname, BookTree* temp){
     }
     std::getline(File, line);
 
+    // the while loop to read the library.txt input data and store into the BookTree
     while(std::getline(File, line)){
         std::stringstream streamline(line);
         std::string title;
@@ -43,8 +44,8 @@ BookTree* GetData(std::string infname, BookTree* temp){
             i++;
         }
 
+        // insert book into tree
         Book *current = new Book (title, author, NF_F, genre, type, length);
-        //current->printBook();
 
         temp->insert(current);
     }
@@ -52,6 +53,8 @@ BookTree* GetData(std::string infname, BookTree* temp){
     return temp;
 }
 
+// This function gets the data from the user about what type of book you would like
+// the program to suggest
 int getInfo(int *currentNF_F, int *currentGenre){
     int num = -1;
     int serial = 0;
@@ -63,6 +66,7 @@ int getInfo(int *currentNF_F, int *currentGenre){
         std::cout << "2: Non-Fiction" << std::endl;
         std::cin >> num;
     }
+    // variable which is used to handle printing of only the same NF_F
     *currentNF_F = num;
     num == 1 ? serial+=1000 : serial+=2000;
     num = -1;
@@ -82,6 +86,7 @@ int getInfo(int *currentNF_F, int *currentGenre){
         std::cin >> num;
     }
 
+    // variable which is used to handle printing of only the same Genre
     *currentGenre = num;
 
     if (num == 0) {
@@ -163,10 +168,12 @@ int getInfo(int *currentNF_F, int *currentGenre){
     return serial;
 }
 
+// Gets the digit of a number based on its position from the right of the number
 int getDigit(int number, int position) {
     return abs(number) / static_cast<int>(std::pow(10, position)) % 10;
 }
 
+// This gets the data for the book which is inserted
 Book* CollectNBookInsertion(std::string fname){
     int num;
     int serial = 0;
@@ -284,6 +291,7 @@ Book* CollectNBookInsertion(std::string fname){
     return current;
 }
 
+// This functions gets the book suggestions
 void BookSuggester(BookTree *tree){
     int currentNF_F = 0;
     int currentGenre = 0;
@@ -308,6 +316,7 @@ void BookSuggester(BookTree *tree){
 
 }
 
+// This is the start interface
 void UserInterface(BookTree *tree, std::string fname){
     int input = -1;
     while(input != 2){
@@ -331,6 +340,7 @@ void UserInterface(BookTree *tree, std::string fname){
     }
 }
 
+// Main function
 int main(int argc, char*argv[]){
 
     std::string infname(argv[1]);
