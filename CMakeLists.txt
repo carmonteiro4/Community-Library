@@ -3,8 +3,8 @@ project(CSC-212-Project)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories("C:/Program Files/Graphviz/include")
-link_directories("C:/Program Files/Graphviz/lib")
+include_directories("C:/Program~1Files/Graphviz/include/graphviz")
+link_directories("C:/Program~1Files/Graphviz/lib")
 
 add_executable(CSC-212-Project main.cpp
         BookTree.cpp
