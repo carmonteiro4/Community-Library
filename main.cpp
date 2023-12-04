@@ -164,13 +164,13 @@ int main(int argc, char*argv[]){
     int serial = getInfo();
 
     int closestSerial = tree->closestSerial(serial);
-    std::cout << "Closest serial to " << serial << " is " << closestSerial << std::endl;
+//    std::cout << "Closest serial to " << serial << " is " << closestSerial << std::endl;
 
     std::vector<Book> suggestions;
     tree->getSuggestions(closestSerial, &suggestions);
 
     for (int i = 0; i < suggestions.size(); i++){
-        std::cout << suggestions[i].title << suggestions[i].author << suggestions[i].NF_F << suggestions[i].genre << suggestions[i].type << suggestions[i].length << std::endl;
+        std::cout << suggestions[i].title << suggestions[i].author << ", " << suggestions[i].NF_F << ", " << suggestions[i].genre << ", " << suggestions[i].type << ", " << suggestions[i].length << std::endl;
     }
 
 
