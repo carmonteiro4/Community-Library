@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <cmath>
 #include "BookTree.h"
 
 BookTree* GetData(std::string infname, BookTree* temp){
@@ -54,10 +55,9 @@ BookTree* GetData(std::string infname, BookTree* temp){
 
 void print_tree(BookTree* tree, std::ofstream& os){
     tree->preorder(os);
-
 }
 
-int getInfo(){
+int getInfo(int *currentNF_F, int *currentGenre){
     int num;
     int serial = 0;
 
@@ -67,6 +67,7 @@ int getInfo(){
     std::cout << "2: Non-Fiction" << std::endl;
 
     std::cin >> num;
+    *currentNF_F = num;
     num == 1 ? serial+=1000 : serial+=2000;
 
     // Genre Collection
@@ -83,6 +84,8 @@ int getInfo(){
     std::cout << "9: Adventure" << std::endl;
 
     std::cin >> num;
+    *currentGenre = num;
+
     if (num == 0) {
         serial += 0;
     } else if (num == 1) {
@@ -155,13 +158,21 @@ int getInfo(){
     return serial;
 }
 
+int getDigit(int number, int position) {
+    return abs(number) / static_cast<int>(std::pow(10, position)) % 10;
+}
+
 int main(int argc, char*argv[]){
     std::string infname(argv[1]);
     std::string ofname(argv[2]);
     BookTree *tree = new BookTree;
     tree = GetData(infname, tree);
 
-    int serial = getInfo();
+
+    int currentNF_F = 0;
+    int currentGenre = 0;
+    int serial = getInfo(&currentNF_F, &currentGenre);
+
 
     int closestSerial = tree->closestSerial(serial);
 //    std::cout << "Closest serial to " << serial << " is " << closestSerial << std::endl;
@@ -170,7 +181,9 @@ int main(int argc, char*argv[]){
     tree->getSuggestions(closestSerial, &suggestions);
 
     for (int i = 0; i < suggestions.size(); i++){
-        std::cout << suggestions[i].title << ", " << suggestions[i].author << ", " << suggestions[i].NF_F << ", " << suggestions[i].genre << ", " << suggestions[i].type << ", " << suggestions[i].length << std::endl;
+        if (getDigit(suggestions[i].serial, 3) == currentNF_F && getDigit(suggestions[i].serial, 2) == currentGenre){
+            std::cout << suggestions[i].title << ", " << suggestions[i].author << ", " << suggestions[i].NF_F << ", " << suggestions[i].genre << ", " << suggestions[i].type << ", " << suggestions[i].length << std::endl;
+        }
     }
 
 
