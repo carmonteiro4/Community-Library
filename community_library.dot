@@ -1,0 +1,25 @@
+digraph G {
+    node [shape=box];
+
+    Main [label="main.cpp\n(Main Function)"];
+    GetData [label="GetData\n(Function)"];
+    UserInterface [label="UserInterface\n(Function)"];
+    BookSuggester [label="BookSuggester\n(Function)"];
+    CollectNBookInsertion [label="CollectNBookInsertion\n(Function)"];
+    getInfo [label="getInfo\n(Function)"];
+    getDigit [label="getDigit\n(Function)"];
+    BookTree_class [label="BookTree\n(Class)"];
+    BookTreeNode_class [label="BookTreeNode\n(Class)"];
+    Book_class [label="Book\n(Class)"];
+
+    Main -> GetData;
+    Main -> UserInterface;
+    UserInterface -> BookSuggester;
+    UserInterface -> CollectNBookInsertion;
+    BookSuggester -> getInfo;
+    BookSuggester -> getDigit;
+    CollectNBookInsertion -> Book_class;
+    GetData -> BookTree_class;
+    BookTree_class -> BookTreeNode_class;
+    BookTreeNode_class -> Book_class;
+}

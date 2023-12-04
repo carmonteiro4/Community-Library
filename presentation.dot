@@ -1,0 +1,26 @@
+digraph G {
+    node [fontname="Arial"];
+
+    // Nodes of the tree
+    Node2204 [label="2204\n(Black)", shape=circle, style=filled, fillcolor=black, fontcolor=white];
+    Node1942 [label="1942\n(Black)", shape=circle, style=filled, fillcolor=black, fontcolor=white];
+    Node2320 [label="2320\n(Black)", shape=circle, style=filled, fillcolor=black, fontcolor=white];
+    Node1543 [label="1543\n(Red)", shape=circle, style=filled, fillcolor=red];
+    Node2000 [label="2000\n(Black)", shape=circle, style=filled, fillcolor=black, fontcolor=white];
+    Node2243 [label="2243\n(Black)", shape=circle, style=filled, fillcolor=black, fontcolor=white];
+    Node2344 [label="2344\n(Black)", shape=circle, style=filled, fillcolor=black, fontcolor=white];
+    Node1303 [label="1303\n(Black)", shape=circle, style=filled, fillcolor=black, fontcolor=white];
+    Node1723 [label="1723\n(Black)", shape=circle, style=filled, fillcolor=black, fontcolor=white];
+    Node1944 [label="1944\n(Red)", shape=circle, style=filled, fillcolor=red];
+
+    // Edges (parent-child relationships)
+    Node2204 -> Node1942;
+    Node2204 -> Node2320;
+    Node1942 -> Node1543;
+    Node1942 -> Node2000;
+    Node2320 -> Node2243;
+    Node2320 -> Node2344;
+    Node1543 -> Node1303;
+    Node1543 -> Node1723;
+    Node2000 -> Node1944;
+}
