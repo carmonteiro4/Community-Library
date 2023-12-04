@@ -300,7 +300,7 @@ void BookSuggester(BookTree *tree){
 
     for (int i = 0; i < suggestions.size(); i++){
         if (getDigit(suggestions[i].serial, 3) == currentNF_F && getDigit(suggestions[i].serial, 2) == currentGenre){
-            std::cout << suggestions[i].title << ", " << suggestions[i].author << ", " << suggestions[i].NF_F << ", " << suggestions[i].genre << ", " << suggestions[i].type << ", " << suggestions[i].length  << "pages" << std::endl;
+            std::cout << suggestions[i].title << ", " << suggestions[i].author << ", " << suggestions[i].NF_F << ", " << suggestions[i].genre << ", " << suggestions[i].type << ", " << suggestions[i].length  << " pages" << std::endl;
         }
     }
 
