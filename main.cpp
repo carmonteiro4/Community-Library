@@ -187,11 +187,6 @@ int main(int argc, char*argv[]){
     }
 
 
-
-//    std::ofstream of(ofname);
-//    print_tree(&tree, of);
-//    of << "Tree Height: " << tree->height() << std::endl;
-//    of.close();
     delete tree;
     return 0;
 }
