@@ -162,6 +162,10 @@ int main(int argc, char*argv[]){
 
     int serial = getInfo();
 
+    int closestSerial = tree->closestSerial(serial);
+    std::cout << "Closest serial to " << serial << " is " << closestSerial << std::endl;
+
+
 //    std::ofstream of(ofname);
 //    print_tree(&tree, of);
 //    of << "Tree Height: " << tree->height() << std::endl;

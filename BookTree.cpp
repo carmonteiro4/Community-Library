@@ -1,4 +1,5 @@
 #include <vector>
+#include <climits>
 #include "BookTree.h"
 
 BookTreeNode::BookTreeNode(Book* book) {
@@ -111,4 +112,29 @@ int BookTree::height(BookTreeNode* root){
 int BookTree::height(){
     return this->height(this->root);
 }
+
+int BookTree::closestSerial(BookTreeNode* root, int serial, int &closest) {
+    if (root == nullptr) return closest;
+
+    if (root->book->serial == serial) {
+        closest = serial;
+        return closest;
+    }
+
+    if (std::abs(serial - root->book->serial) < std::abs(serial - closest)) {
+        closest = root->book->serial;
+    }
+
+    if (serial < root->book->serial) {
+        return closestSerial(root->left, serial, closest);
+    } else {
+        return closestSerial(root->right, serial, closest);
+    }
+}
+
+int BookTree::closestSerial(int serial) {
+    int closest = INT_MAX;
+    return closestSerial(this->root, serial, closest);
+}
+
 

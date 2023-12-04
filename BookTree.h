@@ -42,10 +42,13 @@ class BookTree {
         void search(int serialNum);
         int height();
 
+        int closestSerial(int serial);
 
     private:
         void preorder(BookTreeNode* root, std::ostream& os);
         int height(BookTreeNode* root);
+
+        int closestSerial(BookTreeNode* root, int serial, int &closest);
 
 };
 
