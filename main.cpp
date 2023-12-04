@@ -155,6 +155,46 @@ int getInfo(){
     return serial;
 }
 
+void promptUser(int argc, char*argv[]){
+    std::string infname(argv[1]);
+    std::string ofname(argv[2]);
+    BookTree *tree = new BookTree;
+    tree = GetData(infname, tree);
+    int input = -1;
+    while(input != 0){
+        std::cout << ("0: Exit Code");
+        std::cout << ("1: Get Book Recommendation");
+        std::cout << ("2: Insert Book to the Database");
+        std::cin >> input;
+        if(input = 0){
+        break;
+    }
+        if(input = 1){
+            int serial = getInfo();
+
+        int closestSerial = tree->closestSerial(serial);
+        //    std::cout << "Closest serial to " << serial << " is " << closestSerial << std::endl;
+
+        std::vector<Book> suggestions;
+        tree->getSuggestions(closestSerial, &suggestions);
+
+        for (int i = 0; i < suggestions.size(); i++){
+            std::cout << suggestions[i].title << ", " << suggestions[i].author << ", " << suggestions[i].NF_F << ", " << suggestions[i].genre << ", " << suggestions[i].type << ", " << suggestions[i].length << std::endl;
+    }
+        }
+        if(input = 2){
+            int serial = getInfo();
+            tree->insert()
+
+        }
+
+    }
+    
+
+    
+
+}
+
 int main(int argc, char*argv[]){
     std::string infname(argv[1]);
     std::string ofname(argv[2]);
