@@ -1,4 +1,4 @@
-`# Left-leaning red-black BSTs: Community Library
+# Left-leaning red-black BSTs: Community Library
 
 **Authors:** Carlos Monteiro, Kasem Sasa, James Furtado, William Tsafack  
 **Affiliation:** The University of Rhode Island  
@@ -83,4 +83,4 @@ We have added a few files to help visualize what a left-leaning red-black tree w
 
 ## Conclusion
 
-In conclusion, our project successfully implemented the left-leaning red-black tree (LLRB tree) data structure to create an efficient and user-friendly Community Library. The LLRB tree's balanced nature ensures quick access to book information, making our application a reliable and robust platform for book enthusiasts. The use of LLRB trees in our library provides a solid foundation for future expansions and improvements, demonstrating the effectiveness of this data structure in real-world applications.`
+In conclusion, our project successfully implemented the left-leaning red-black tree (LLRB tree) data structure to create an efficient and user-friendly Community Library. The LLRB tree's balanced nature ensures quick access to book information, making our application a reliable and robust platform for book enthusiasts. The use of LLRB trees in our library provides a solid foundation for future expansions and improvements, demonstrating the effectiveness of this data structure in real-world applications.
