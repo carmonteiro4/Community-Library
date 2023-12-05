@@ -51,19 +51,19 @@ build cmake_object_order_depends_target_CSC-212-Project: phony || CMakeFiles/CSC
 
 build CMakeFiles/CSC-212-Project.dir/main.cpp.obj: CXX_COMPILER__CSC-212-Project_unscanned_Debug C$:/Users/james/OneDrive$ -$ University$ of$ Rhode$ Island/Documents/GitHub/CSC-212-Project/main.cpp || cmake_object_order_depends_target_CSC-212-Project
   DEP_FILE = CMakeFiles\CSC-212-Project.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\CSC-212-Project.dir
   OBJECT_FILE_DIR = CMakeFiles\CSC-212-Project.dir
 
 build CMakeFiles/CSC-212-Project.dir/BookTree.cpp.obj: CXX_COMPILER__CSC-212-Project_unscanned_Debug C$:/Users/james/OneDrive$ -$ University$ of$ Rhode$ Island/Documents/GitHub/CSC-212-Project/BookTree.cpp || cmake_object_order_depends_target_CSC-212-Project
   DEP_FILE = CMakeFiles\CSC-212-Project.dir\BookTree.cpp.obj.d
-  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\CSC-212-Project.dir
   OBJECT_FILE_DIR = CMakeFiles\CSC-212-Project.dir
 
 build CMakeFiles/CSC-212-Project.dir/Book.cpp.obj: CXX_COMPILER__CSC-212-Project_unscanned_Debug C$:/Users/james/OneDrive$ -$ University$ of$ Rhode$ Island/Documents/GitHub/CSC-212-Project/Book.cpp || cmake_object_order_depends_target_CSC-212-Project
   DEP_FILE = CMakeFiles\CSC-212-Project.dir\Book.cpp.obj.d
-  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\CSC-212-Project.dir
   OBJECT_FILE_DIR = CMakeFiles\CSC-212-Project.dir
 
